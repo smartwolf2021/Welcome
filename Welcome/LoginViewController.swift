@@ -9,14 +9,16 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    //MARK: - IB Outlets
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    //MARK: - Life Cycles Metods
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    
+    //MARK: - Override Metods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let userName = userNameTextField.text, !(userNameTextField.text?.isEmpty ?? false) else {
@@ -31,7 +33,7 @@ class LoginViewController: UIViewController {
             break
         }
     }
-    
+    //MARK: - IB Actions
     @IBAction func unwindToLoginScreen(_ segue: UIStoryboardSegue) {}
     
     func clearTextFields() {
@@ -39,6 +41,7 @@ class LoginViewController: UIViewController {
         passwordTextField.text = ""
     }
     
+    //MARK: - Private Methods
     private func prepareWelcomeScreen(_ segue: UIStoryboardSegue, userName: String) {
         guard let destinationController = segue.destination as? WelcomeViewController else {
             return
@@ -52,11 +55,5 @@ class LoginViewController: UIViewController {
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
     }
-
-    
-    
-    // MARK: - Navigation
-
-    
 
 }
