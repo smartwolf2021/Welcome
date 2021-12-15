@@ -36,6 +36,7 @@ class LoginViewController: UIViewController {
     //MARK: - IB Actions
     @IBAction func unwindToLoginScreen(_ segue: UIStoryboardSegue) {}
     
+    //MARK: - Public Methods
     func clearTextFields() {
         userNameTextField.text = ""
         passwordTextField.text = ""
