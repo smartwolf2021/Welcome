@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C99A41E0276E261E00A2E5A5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A41DF276E261E00A2E5A5 /* UserModel.swift */; };
 		C99A41E2276E34A600A2E5A5 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A41E1276E34A600A2E5A5 /* InfoViewController.swift */; };
+		C99A41E4276E3E2600A2E5A5 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A41E3276E3E2600A2E5A5 /* MoreInfoViewController.swift */; };
 		D3C950AB276A5410008DB2F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C950AA276A5410008DB2F9 /* AppDelegate.swift */; };
 		D3C950AD276A5410008DB2F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C950AC276A5410008DB2F9 /* SceneDelegate.swift */; };
 		D3C950B2276A5410008DB2F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3C950B0276A5410008DB2F9 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		C99A41DF276E261E00A2E5A5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C99A41E1276E34A600A2E5A5 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		C99A41E3276E3E2600A2E5A5 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		D3C950A7276A5410008DB2F9 /* Welcome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Welcome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C950AA276A5410008DB2F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C950AC276A5410008DB2F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				D3C950BE276A556E008DB2F9 /* LoginViewController.swift */,
 				D3C950C0276A6276008DB2F9 /* WelcomeViewController.swift */,
 				C99A41E1276E34A600A2E5A5 /* InfoViewController.swift */,
+				C99A41E3276E3E2600A2E5A5 /* MoreInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				D3C950BF276A556E008DB2F9 /* LoginViewController.swift in Sources */,
 				D3C950C1276A6276008DB2F9 /* WelcomeViewController.swift in Sources */,
 				D3C950AB276A5410008DB2F9 /* AppDelegate.swift in Sources */,
+				C99A41E4276E3E2600A2E5A5 /* MoreInfoViewController.swift in Sources */,
 				C99A41E0276E261E00A2E5A5 /* UserModel.swift in Sources */,
 				C99A41E2276E34A600A2E5A5 /* InfoViewController.swift in Sources */,
 				D3C950AD276A5410008DB2F9 /* SceneDelegate.swift in Sources */,

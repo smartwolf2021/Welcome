@@ -21,22 +21,6 @@ class LoginViewController: UIViewController {
         userNameTextField.delegate = self
         passwordTextField.delegate = self
     }
-    //MARK: - Override Metods
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let userName = userNameTextField.text, !(userNameTextField.text?.isEmpty ?? false) else {
-            showAlert(title: "Ошибка!", message: "Укажите корректный логин и пароль")
-            return
-        }
-        
-        switch segue.identifier {
-        case "toWelcomeScreen":
-            prepareTabBarConroller(segue, userName: userName)
-        default:
-            break
-        }
-    }
-    
        
     //MARK: - IB Actions
     @IBAction func unwindToLoginScreen(_ segue: UIStoryboardSegue) {
@@ -44,8 +28,12 @@ class LoginViewController: UIViewController {
         passwordTextField.text = ""
     }
     @IBAction func logInPressed(_ sender: Any) {
-        if userNameTextField.text != user.login || passwordTextField.text != user.password {
-            showAlert(title: "Ошибка!", message: "Укажите корректный логин и пароль")
+        guard let userName = userNameTextField.text, !userName.isEmpty else {
+            showAlert(title: "Login error!", message: "Login must be entered")
+            return
+        }
+        if userName != user.login || passwordTextField.text != user.password {
+            showAlert(title: "Error!", message: "Please enter correct login/password")
         }
     }
     @IBAction func forgotData(_ sender: UIButton) {
@@ -59,28 +47,29 @@ class LoginViewController: UIViewController {
         }
     }
     
-    //MARK: - Public Methods
-  
-    
     //MARK: - Private Methods
-    private func prepareTabBarConroller(_ segue: UIStoryboardSegue, userName: String) {
-        guard let tabBarConroller = segue.destination as? UITabBarController else {
-            return
-        }
-        let viewControllers = tabBarConroller.viewControllers
-        for viewController in viewControllers {
-            if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.person = user.person
-            }
-        }
-        destinationController.person = user.person
-    }
-    
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "ОК", style: .default)
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBarConroller = segue.destination as? UITabBarController else {
+            return
+        }
+        let viewControllers = tabBarConroller.viewControllers!
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController{
+                welcomeVC.person = user.person
+            } else if let navigationVC = viewController as? UINavigationController {
+                let infoVC = navigationVC.topViewController as! InfoViewController
+                infoVC.person = user.person
+            }
+        }
     }
 
 }
