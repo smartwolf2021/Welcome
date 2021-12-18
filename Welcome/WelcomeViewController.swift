@@ -22,22 +22,5 @@ class WelcomeViewController: UIViewController {
 
     }
     
-    //MARK: - Override Metods
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "toLoginScreen":
-            prepareLoginScreen(segue)
-        default:
-            break
-        }
-    }
     
-    //MARK: - Private Methods
-    private func prepareLoginScreen(_ segue: UIStoryboardSegue) {
-        guard let destinationController = segue.destination as? LoginViewController else {
-            return
-        }
-        destinationController.clearTextFields()
-    }
-
 }
